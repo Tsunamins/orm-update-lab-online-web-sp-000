@@ -32,8 +32,8 @@ class Student
     
     def self.create(name, grade)
       new_student = self.new(name, grade)
-      student.save 
-      student 
+      new_student.save 
+      new_student 
     end 
   
     def self.new_from_db(row)
@@ -54,8 +54,8 @@ class Student
   end 
   
   def update
-    sql = "UPDATE songs SET name = ?, album = ? WHERE id = ?" 
-    DB[:conn].execute(sql, self.name, self.album, self.id)
+    sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?" 
+    DB[:conn].execute(sql, self.name, self.grade, self.id)
   end
 
 
